@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "mineconomy:block/raising_coin_exchanger" },
+    "facing=south": { "model": "mineconomy:block/raising_coin_exchanger", "y": 180 },
+    "facing=west":  { "model": "mineconomy:block/raising_coin_exchanger", "y": 270 },
+    "facing=east":  { "model": "mineconomy:block/raising_coin_exchanger", "y": 90 }
+  }
+}

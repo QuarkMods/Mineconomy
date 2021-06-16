@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iRi",
+    "HCH",
+    "iJi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "C": {
+      "item": "minecraft:chest"
+    },
+    "J": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "result": {
+    "item": "mineconomy:lowering_coin_exchanger",
+    "count": 1
+  }
+}

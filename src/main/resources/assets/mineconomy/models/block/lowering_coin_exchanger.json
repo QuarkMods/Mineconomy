@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "mineconomy:block/coin_exchanger_side",
+    "front": "mineconomy:block/lowering_coin_exchanger_face",
+    "side": "mineconomy:block/coin_exchanger_side"
+  }
+}

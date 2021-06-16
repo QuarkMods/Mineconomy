@@ -1,0 +1,8 @@
+{
+  "item.mineconomy.galleon": "Galleon",
+  "item.mineconomy.sickle": "Sickle",
+  "item.mineconomy.knut": "Knut",
+
+  "block.mineconomy.raising_coin_exchanger": "Raising exchanger",
+  "block.mineconomy.lowering_coin_exchanger": "Lowering exchanger"
+}
