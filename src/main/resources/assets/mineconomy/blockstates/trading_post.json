@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "mineconomy:block/trading_post" },
+    "facing=south": { "model": "mineconomy:block/trading_post", "y": 180 },
+    "facing=west":  { "model": "mineconomy:block/trading_post", "y": 270 },
+    "facing=east":  { "model": "mineconomy:block/trading_post", "y": 90 }
+  }
+}

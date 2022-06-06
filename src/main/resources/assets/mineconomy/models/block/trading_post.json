@@ -1,0 +1,12 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "mineconomy:block/trading_post_lid",
+    "bottom": "mineconomy:block/trading_post_lid",
+    "north": "mineconomy:block/trading_post_face",
+    "east": "mineconomy:block/trading_post_side",
+    "south": "mineconomy:block/trading_post_face",
+    "west": "mineconomy:block/trading_post_side",
+    "particle": "mineconomy:block/trading_post_face"
+  }
+}

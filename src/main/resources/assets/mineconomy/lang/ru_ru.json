@@ -4,5 +4,7 @@
   "item.mineconomy.knut": "Кнат",
 
   "block.mineconomy.raising_coin_exchanger": "Повышающий обменник",
-  "block.mineconomy.lowering_coin_exchanger": "Понижающий обменник"
+  "block.mineconomy.lowering_coin_exchanger": "Понижающий обменник",
+  "block.mineconomy.trading_post": "Торговый пункт",
+  "block.mineconomy.trading_post.ready": "Готов"
 }
