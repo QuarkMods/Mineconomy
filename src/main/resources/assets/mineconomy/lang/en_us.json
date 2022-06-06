@@ -4,5 +4,7 @@
   "item.mineconomy.knut": "Knut",
 
   "block.mineconomy.raising_coin_exchanger": "Raising exchanger",
-  "block.mineconomy.lowering_coin_exchanger": "Lowering exchanger"
+  "block.mineconomy.lowering_coin_exchanger": "Lowering exchanger",
+  "block.mineconomy.trading_post": "Trading post",
+  "block.mineconomy.trading_post.ready": "Ready"
 }

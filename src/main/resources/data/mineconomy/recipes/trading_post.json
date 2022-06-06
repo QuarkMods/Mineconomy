@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BKB",
+    "CIC",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:stone_button"
+    },
+    "C": {
+      "item": "minecraft:chest"
+    },
+    "K": {
+      "item": "minecraft:comparator"
+    }
+  },
+  "result": {
+    "item": "mineconomy:trading_post",
+    "count": 1
+  }
+}
