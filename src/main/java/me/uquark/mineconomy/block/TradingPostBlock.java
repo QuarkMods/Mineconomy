@@ -2,13 +2,13 @@ package me.uquark.mineconomy.block;
 
 import me.uquark.mineconomy.Mineconomy;
 import me.uquark.mineconomy.block.entity.TradingPostBlockEntity;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.ActionResult;
@@ -18,7 +18,6 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,13 +27,15 @@ public class TradingPostBlock extends BlockWithEntity {
 
     public TradingPostBlock() {
         super(AbstractBlock.Settings.of(Material.METAL).strength(5, 6));
-        item = new BlockItem(this, new Item.Settings().group(ItemGroup.DECORATIONS).maxCount(64));
+        item = new BlockItem(this, new Item.Settings().maxCount(64));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(item));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(entries -> entries.add(item));
         setDefaultState(getDefaultState().with(HorizontalFacingBlock.FACING, Direction.NORTH));
     }
 
     public void register() {
-        Registry.register(Registry.BLOCK, id, this);
-        Registry.register(Registry.ITEM, id, item);
+        Registry.register(Registries.BLOCK, id, this);
+        Registry.register(Registries.ITEM, id, item);
     }
 
     @Override

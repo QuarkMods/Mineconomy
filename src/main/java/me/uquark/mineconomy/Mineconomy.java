@@ -8,10 +8,9 @@ import me.uquark.mineconomy.item.Items;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.ChestBlockEntity;
-import net.minecraft.client.gui.screen.ingame.GenericContainerScreen;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.util.registry.Registry;
 
 public class Mineconomy implements ModInitializer {
     public static final String modid = "mineconomy";
@@ -19,7 +18,7 @@ public class Mineconomy implements ModInitializer {
     public static BlockEntityType<TradingPostBlockEntity> TRADING_POST_BLOCK_ENTITY_TYPE;
     static {
         TRADING_POST_BLOCK_ENTITY_TYPE = Registry.register(
-                Registry.BLOCK_ENTITY_TYPE,
+                Registries.BLOCK_ENTITY_TYPE,
                 TradingPostBlock.id,
                 FabricBlockEntityTypeBuilder.create(TradingPostBlockEntity::new, Blocks.TRADING_POST_BLOCK).build()
         );
@@ -28,7 +27,7 @@ public class Mineconomy implements ModInitializer {
     public static ScreenHandlerType<TradingPostScreenHandler> TRADING_POST_SCREEN_HANDLER_TYPE;
     static {
         TRADING_POST_SCREEN_HANDLER_TYPE = new ScreenHandlerType<>(TradingPostScreenHandler::new);
-        Registry.register(Registry.SCREEN_HANDLER, TradingPostBlock.id, TRADING_POST_SCREEN_HANDLER_TYPE);
+        Registry.register(Registries.SCREEN_HANDLER, TradingPostBlock.id, TRADING_POST_SCREEN_HANDLER_TYPE);
     }
 
     @Override

@@ -6,15 +6,13 @@ import me.uquark.mineconomy.item.Items;
 import me.uquark.mineconomy.item.KnutItem;
 import me.uquark.mineconomy.item.SickleItem;
 import me.uquark.quarkcore.block.AbstractHorizontalFacingBlock;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -28,8 +26,10 @@ public abstract class AbstractCoinExchangerBlock extends AbstractHorizontalFacin
             Mineconomy.modid,
             name,
             AbstractBlock.Settings.of(Material.METAL).strength(5, 6),
-            new Item.Settings().group(ItemGroup.DECORATIONS).maxCount(64)
+            new Item.Settings().maxCount(64)
         );
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(entries -> entries.add(this));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(this));
     }
 
     protected void packMoney(PlayerEntity player) {

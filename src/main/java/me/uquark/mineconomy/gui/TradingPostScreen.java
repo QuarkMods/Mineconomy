@@ -7,9 +7,7 @@ import net.minecraft.client.gui.widget.CheckboxWidget;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 public class TradingPostScreen extends HandledScreen<TradingPostScreenHandler> {
@@ -28,7 +26,7 @@ public class TradingPostScreen extends HandledScreen<TradingPostScreenHandler> {
         super.init();
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
-        checkboxWidget = new CheckboxWidget(x+183, y+197, 20, 20, new TranslatableText("block.mineconomy.trading_post.ready"), false);
+        checkboxWidget = new CheckboxWidget(x+183, y+197, 20, 20, Text.translatable("block.mineconomy.trading_post.ready"), false);
     }
 
     @Override
@@ -36,7 +34,7 @@ public class TradingPostScreen extends HandledScreen<TradingPostScreenHandler> {
         if (checkboxWidget.isChecked() && !handler.isUserReady())
             checkboxWidget.onPress();
 
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - backgroundWidth) / 2;
@@ -48,7 +46,7 @@ public class TradingPostScreen extends HandledScreen<TradingPostScreenHandler> {
         if (handler.isPartnerReady())
             drawTexture(matrices, x+97, y+17, 97, 17, 72, 108);
         if (handler.isUserReady() && handler.isPartnerReady()) {
-            drawTextWithShadow(matrices, client.textRenderer, new LiteralText(String.valueOf(handler.getCountdown())), x+85, y+77, 0xFFFFFF);
+            drawTextWithShadow(matrices, client.textRenderer, Text.literal(String.valueOf(handler.getCountdown())), x+85, y+77, 0xFFFFFF);
         }
         checkboxWidget.renderButton(matrices, mouseX, mouseY, delta);
     }
